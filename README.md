@@ -1,4 +1,4 @@
-# Big-Data-Approach-to-Understanding-U.S.-Car-Accidents
+# Big Data Insights into U.S. Car Accidents
 # Premise
 Over the years, the demand for transportation has shifted from public to private modes, with most people in the United States now relying on private transportation. This increasing demand, coupled with developments in transportation infrastructure, has brought about significant traffic safety challenges. Car accidents are prevalent worldwide, and the cost of vehicle crashes and driver injuries has a substantial impact on society.
 
