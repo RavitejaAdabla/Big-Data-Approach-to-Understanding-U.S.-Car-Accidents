@@ -16,16 +16,23 @@ The primary variable, Severity, ranges from 1 to 4. The dataset is imbalanced, w
 
 We split the dataset into training and validation sets, with 70% of the data used for training the models and the remaining 30% reserved for validation. This approach allows for both multiclass and binary classification using the processed data.
 
-Machine Learning Algorithms thar are used include Logistic regression, Decision tree and Random Forest.
+Machine Learning Algorithms that are used include Logistic regression, Decision tree, and Random Forest.
 
 # Results
-## State Analysis: California reports the highest number of accidents among all U.S. states.
-## City Analysis: Within California, Miami has the highest number of accidents.
-## Monthly Analysis: Severity 2 accidents are the most common across months, with December recording the highest number of accidents. The year 2021 experienced the most accidents overall.
-## Severity Distribution: Severity 2 has the highest frequency of accidents, while Severity 3 and 4 are the least common.
-## Time of Day: Severe accidents (Severity=4) occur throughout the day, with no specific time showing a higher frequency.
-## Day of the Week: Friday has the highest number of accidents from 2016 to 2021. The accident rate significantly decreases over the weekends.
-## Model Performance: The Random Forest model outperforms other models in predicting accident severity, achieving an accuracy of 81.67% and an AUC ROC of 84.26%.
+## State Analysis: 
+California reports the highest number of accidents among all U.S. states.
+## City Analysis: 
+Within California, Miami has the highest number of accidents.
+## Monthly Analysis: 
+Severity 2 accidents are the most common across months, with December recording the highest number of accidents. The year 2021 experienced the most accidents overall.
+## Severity Distribution: 
+Severity 2 has the highest frequency of accidents, while Severity 3 and 4 are the least common.
+## Time of Day: 
+Severe accidents (Severity=4) occur throughout the day, with no specific time showing a higher frequency.
+## Day of the Week: 
+Friday has the highest number of accidents from 2016 to 2021. The accident rate significantly decreases over the weekends.
+## Model Performance: 
+The Random Forest model outperforms other models in predicting accident severity, achieving an accuracy of 81.67% and an AUC ROC of 84.26%.
 
 # Conclusion
 Our exploratory data analysis revealed that certain factors, such as the day of the week, hour of the day, and month of the year, exhibit significantly high accident frequencies. Authorities can use this information to strategically plan and enforce stricter traffic laws during these peak times to potentially reduce accident numbers.
