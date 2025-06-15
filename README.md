@@ -1,42 +1,55 @@
-# Big Data Insights into U.S. Car Accidents
-# Premise
-Over the years, the demand for transportation has shifted from public to private modes, with most people in the United States now relying on private transportation. This increasing demand, coupled with developments in transportation infrastructure, has brought about significant traffic safety challenges. Car accidents are prevalent worldwide, and the cost of vehicle crashes and driver injuries has a substantial impact on society.
+# Big Data Analysis of U.S. Car Accidents
+An end-to-end big data project to analyze and predict the severity of car accidents across the United States. This analysis leverages a large-scale dataset (2016-2021) to identify key factors contributing to accidents and builds a machine learning model to forecast their severity.
 
-In this analysis, we aim to examine the number of accidents occurring across different states and cities, throughout the year, and during various months. Our goal is to estimate the severity of these accidents and gain insights into traffic safety trends.
+## Project Goal
+The primary objective is to analyze traffic accident data to uncover patterns related to time, location, and environmental factors. The ultimate goal is to build a predictive model that can accurately forecast accident severity, providing actionable insights for traffic safety authorities to implement preventative measures.
 
-# Goal
-The goal of this project is to conduct an analysis to predict the severity of car accidents across the United States using big data tools. This study will investigate the occurrence of accidents in various states and cities, considering data from 2016 to 2021. Additionally, it will analyze the timing of these accidents throughout different times of the day to provide comprehensive insights.
+**Key Objectives:**  
+**Analyze Trends:** Investigate accident occurrences across states, cities, months, and time of day.  
+**Feature Engineering:** Engineer meaningful features from raw data to improve model performance.  
+**Predict Severity:** Develop and evaluate multiple machine learning models to predict accident severity (ranging from 1-4).  
+**Provide Recommendations:** Offer data-driven insights that can help authorities reduce accident frequency and severity.  
 
-# Feature Engineering and Data Modelling
-A crucial step in developing any machine learning model is feature engineering. Since many algorithms perform better with numerical data, we utilized One-Hot Encoding to convert categorical attributes into numerical format using dummy variables.
+## Methodology & Tech Stack
+This project utilizes big data tools and a standard machine learning workflow to process and model the data.
 
-Our analysis did not gain significant insights from time-related variables indicating when the accident started and ended. Instead, we transformed these features into more relevant ones, such as the day of the week and the hour of the day.
+**Core Technologies:** Python, Pandas, Apache Spark (for handling large datasets).  
+**Machine Learning:** Scikit-learn.  
+**Models Used:** Logistic Regression, Decision Tree, Random Forest.  
 
-The primary variable, Severity, ranges from 1 to 4. The dataset is imbalanced, with a high frequency of Severity 2 observations compared to the rarer Severity 1 instances. To address this imbalance, we consolidated Severity 1 and 2 into a single category, Severity 2.
+**Data Processing & Feature Engineering:**  
+**Data Ingestion:** Loaded the U.S. Car Accidents dataset covering 2016-2021.  
+**Feature Transformation:**  
+Converted raw start_time and end_time columns into more predictive features like hour_of_day and day_of_week.  
+Utilized One-Hot Encoding to transform categorical variables into a numerical format suitable for machine learning algorithms.  
+**Handling Class Imbalance:**  
+The Severity variable was highly imbalanced, with a prevalence of "Severity 2" accidents.  
+To create a more stable model, "Severity 1" and "Severity 2" were consolidated into a single "Low Severity" category for binary classification tasks, effectively balancing the dataset.  
+**Data Splitting:** The dataset was partitioned into a 70% training set and a 30% validation set.  
 
-We split the dataset into training and validation sets, with 70% of the data used for training the models and the remaining 30% reserved for validation. This approach allows for both multiclass and binary classification using the processed data.
+## Key Analytical Insights
+The exploratory data analysis revealed several distinct patterns in U.S. car accidents:
 
-Machine Learning Algorithms that are used include Logistic regression, Decision tree, and Random Forest.
+**Geographic Hotspots:**  
+**State Level:** California has the highest number of reported accidents nationwide.  
+**City Level:** Miami reports the highest number of accidents.  
+**Temporal Trends:**  
+**Monthly:** December sees the highest frequency of accidents.  
+**Yearly:** 2021 recorded the most accidents in the dataset.  
+**Weekly:** Accidents peak on Fridays and decrease significantly over the weekend.  
+**Severity Distribution:**  
+"Severity 2" is the most common type of accident.  
+Severe accidents (Severity 4) do not appear to be concentrated at any specific time of day.  
 
-# Results
-## State Analysis: 
-California reports the highest number of accidents among all U.S. states.
-## City Analysis: 
-Within California, Miami has the highest number of accidents.
-## Monthly Analysis: 
-Severity 2 accidents are the most common across months, with December recording the highest number of accidents. The year 2021 experienced the most accidents overall.
-## Severity Distribution: 
-Severity 2 has the highest frequency of accidents, while Severity 3 and 4 are the least common.
-## Time of Day: 
-Severe accidents (Severity=4) occur throughout the day, with no specific time showing a higher frequency.
-## Day of the Week: 
-Friday has the highest number of accidents from 2016 to 2021. The accident rate significantly decreases over the weekends.
-## Model Performance: 
-The Random Forest model outperforms other models in predicting accident severity, achieving an accuracy of 81.67% and an AUC ROC of 84.26%.
+## Model Performance
+The Random Forest model demonstrated superior performance in predicting accident severity compared to other algorithms. This model's high accuracy and AUC score, especially on the balanced dataset, make it the most reliable model for this prediction task. Feature importance plots from the model identified Year, Wind Speed, and Hour as the most significant predictors.
 
-# Conclusion
-Our exploratory data analysis revealed that certain factors, such as the day of the week, hour of the day, and month of the year, exhibit significantly high accident frequencies. Authorities can use this information to strategically plan and enforce stricter traffic laws during these peak times to potentially reduce accident numbers.
+## Actionable Recommendations for Authorities
+**The insights from this analysis can be used to develop targeted safety interventions:**
 
-We observed that accident severity tends to increase during the day, indicating a need for heightened safety measures and precautions during daytime hours.
+**Strategic Resource Allocation:** Law enforcement and safety patrols should be increased in high-risk areas like California and Miami, especially during peak accident times.  
+**Targeted Enforcement:** With Fridays and the month of December identified as high-frequency periods, authorities can plan targeted campaigns to enforce traffic laws and raise driver awareness during these times.  
+**Daytime Safety Measures:** Since accident severity appears to increase during daytime hours, public awareness campaigns should emphasize the need for heightened caution while driving during the day.  
+This project successfully demonstrates how big data analysis can provide critical insights into traffic safety, offering a clear path for authorities to make data-informed decisions that can potentially save lives.
 
-Feature importance plots identified Year, Wind Speed, and Hour as significant predictors in forecasting accident severity. Among the models tested, the Random Forest model performed best in terms of accuracy and AUC ROC score, particularly when applied to a balanced dataset.
+
